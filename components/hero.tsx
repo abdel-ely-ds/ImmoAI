@@ -71,11 +71,12 @@ export default function Hero() {
     setText("");
   };
 
-  const handleSave = (index: number, event: MouseEvent<HTMLButtonElement>) => {
+  const handleSave = (
+    index: number,
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
     event.preventDefault();
-    console.log(text);
-    console.log(event.target.value);
-    if (event.target.value.trim() !== text) {
+    if (event.currentTarget.value.trim() !== text) {
       setChats(chats.slice(0, index + 1));
     }
     setEditIndex(-1);
